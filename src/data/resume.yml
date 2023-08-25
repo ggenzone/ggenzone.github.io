@@ -65,13 +65,29 @@ experiences:
       - Developed UI based on ProofGeneral for Emacs (elisp).
       - Developed backtrack feature for proofs (OCaml).
 
-  - date: Jun 2008 – Dec 2019
+  - date: Jun 2008 – Dec 2011
     role: Senior C/C++ Developer
     place: Accenture
     location: Rosario, Argentina
     type: Full-time
     bullets:
       - Development and maintenance of C functionalities in Unix environments.
+
+  - date: 2008
+    role: Undergraduate Teaching Assistant in Programming language analysis II
+    place: Universidad Nacional de Rosario
+    type: Part-time
+    location: Rosario, Argentina
+    bullets:
+      - Functional Programming
+
+  - date: 2007
+    role: Undergraduate Teaching Assistant in Discrete Mathematics
+    place: Universidad Nacional de Rosario
+    type: Part-time
+    location: Rosario, Argentina
+    bullets:
+      - Discrete Mathematics, Functional Programming, C Programming
 
 
 educations:

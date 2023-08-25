@@ -1,8 +1,34 @@
 ---
-- title: title 
-  date: '2020-12-01'
-  content: Content 
+#- title: KleeneUI
+#  tthumb: /projects/KleeneUI.jpg
+#  date: '2023-06-01'
+#  url: https://github.com/ggenzone/kleene-ui
+#  content: Basic open-source Tailwind CSS component library.
+#  photos:
+#    - /projects/KleeneUI.png
+#  tags:
+#  - TypeScript
+#  - Vite
+#  - Tailwind CSS
+#  - UI library
+#  - UI component
+#  tools:
+#  - Tailwind CSS
+#  - PostCSS
+#  - TypeScript
+
+- title: BeerApp
+  thumb: /projects/thumb-beerapp.png
+  date: '2019-06-01'
+  url: https://www.beerapp.net
+  content: SaaS Management Software for Craft Breweries.
+  photos:
+    - /projects/beerapp.png
   tags:
-  - Tags
+  - Symfony
+  - PHP
+  - ReactNative
+  - SaaS
   tools:
-  - Tools 
+  - Tailwind CSS
+  - PostCSS
