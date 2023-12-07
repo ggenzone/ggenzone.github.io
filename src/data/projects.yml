@@ -32,3 +32,34 @@
   tools:
   - Tailwind CSS
   - PostCSS
+
+- title: Bristles
+  thumb: /projects/thumb-bristles.png
+  date: '2023-10-01'
+  url: https://github.com/bristles-xyz/bristles
+  content: Create diagrams, sketches, and illustrations using a simple canvas-based drawing tool.
+  photos:
+    - /projects/bristles.png
+  tags:
+  - TypeScript
+  - Canvas
+  - Real Time
+  - SaaS
+  tools:
+  - Tailwind CSS
+  - Shadcn/ui
+
+- title: Efimero
+  thumb: /projects/thumb-efimero.png
+  date: '2023-06-01'
+  url: https://efimero.xyz
+  content: Encrypted Real-Time Chat
+  photos:
+    - /projects/efimero.png
+  tags:
+  - TypeScript
+  - WebSocket
+  - Real Time
+  tools:
+  - Tailwind CSS
+  - Shadcn/ui
