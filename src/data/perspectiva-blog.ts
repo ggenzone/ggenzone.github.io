@@ -5,7 +5,7 @@ import {
   BookOpenIcon,
 } from "lucide-react"
 
-export const getRelativeBaseUrl = (path: string) => `${baseUrl}/perspectiva${path}`;
+export const getRelativeBaseUrl = (path: string) => `${baseUrl}/perspectiva/${path}`;
 
 export const blog: Blog = {
     title: "Perspectiva",
@@ -17,8 +17,8 @@ Este cuaderno es un espacio personal para explorar, cuestionar y profundizar en 
 
 Espero que este registro me ayude a consolidar conocimientos y, quizás, a conectar con otras personas que estén en un proceso similar de aprendizaje.`,
   
-    rss: getRelativeBaseUrl('/rss.xml'),
-    image: getRelativeBaseUrl("/perspectiva.png"),
+    rss: getRelativeBaseUrl('rss.xml'),
+    image: getRelativeBaseUrl("perspectiva.png"),
     menu: [
       {
         name: "Home",
@@ -28,18 +28,18 @@ Espero que este registro me ayude a consolidar conocimientos y, quizás, a conec
       /*
       {
           name: "Tags",
-          url: getRelativeBaseUrl('/tags'),
+          url: getRelativeBaseUrl('tags'),
           icon: HomeIcon,
       },
       {
         name: "Categorias",
-        url: getRelativeBaseUrl('/categorias'),
+        url: getRelativeBaseUrl('categorias'),
         icon: HomeIcon
       },
       */
       {
         name: "Bibliografia",
-        url: getRelativeBaseUrl('/bibliografia'),
+        url: getRelativeBaseUrl('bibliografia'),
         icon: BookOpenIcon
       }
     ]

@@ -15,12 +15,10 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<PostLayout 
-    title='Post 1'
-  frontmatter={post.data}
-  headings={post.rendered.metadata.headings} 
-  url={`/bitacora2/perspectiva/${post.id}.md`}
-  blog={blog}
+<PostLayout
+    frontmatter={post.data}
+    headings={post.rendered.metadata.headings} 
+    blog={blog}
 >
   <Content />
 </PostLayout>

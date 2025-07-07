@@ -4,7 +4,7 @@ import BlogLayout from '../../layouts/blog.astro';
 import BlogPostPreview from "../../components/astro/blog-preview.astro";
 
 import { latestPosts } from "../../lib/content";
-import { blog } from '../../data/decadencia-blog.ts';
+import { blog, getRelativeBaseUrl } from '../../data/decadencia-blog.ts';
 
 const posts = await latestPosts("decadencia");
 
@@ -17,7 +17,7 @@ const posts = await latestPosts("decadencia");
     <div class="grid grid-cols-1 gap-4 ">    
         {posts.map(post => 
             <div class=" bg-sidebar text-sidebar-foreground mt-2 rounded-xl">
-                <BlogPostPreview post={post} url={`/bitacora2/decadencia/${post.id}`} />
+                <BlogPostPreview post={post} url={getRelativeBaseUrl(post.id)} />
             </div>
         )}
     </div>

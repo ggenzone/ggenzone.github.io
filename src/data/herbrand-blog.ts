@@ -5,7 +5,7 @@ import {
   TagIcon,
 } from "lucide-react"
 
-export const getRelativeBaseUrl = (path: string) => `${baseUrl}/herbrand${path}`;
+export const getRelativeBaseUrl = (path: string) => `${baseUrl}/herbrand/${path}`;
 
 export const blog: Blog = {
     title: "Herbrand",
@@ -13,7 +13,7 @@ export const blog: Blog = {
     description: `Este espacio es mi cuaderno mental, donde intento comprender cómo funciona el universo a través de la física, las matemáticas y la ciencia en general.
 
 Escribo para entender, para equivocarme y volver a intentar. No enseño, simplemente pienso en voz alta con ayuda de GPT. `,
-    rss: getRelativeBaseUrl('/rss.xml'),
+    rss: getRelativeBaseUrl('rss.xml'),
     image: getRelativeBaseUrl('herbrand.png'),
     menu: [
       {
@@ -23,7 +23,7 @@ Escribo para entender, para equivocarme y volver a intentar. No enseño, simplem
       },
       {
           name: "Tags",
-          url: getRelativeBaseUrl('/tags'),
+          url: getRelativeBaseUrl('tags'),
           icon: TagIcon,
       }
     ]

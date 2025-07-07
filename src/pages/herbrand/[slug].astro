@@ -16,10 +16,8 @@ const { Content } = await render(post);
 ---
 
 <PostLayout 
-    title='Post 1'
   frontmatter={post.data}
   headings={post.rendered.metadata.headings} 
-  url={`/bitacora2/herbrand/${post.id}.md`}
   blog={blog}
 >
   <Content />

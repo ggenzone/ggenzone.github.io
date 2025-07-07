@@ -14,7 +14,7 @@ export async function GET(context) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: getRelativeBaseUrl(`/${post.id}/`),
+      link: getRelativeBaseUrl(`${post.id}/`),
     })),
     customData: `<language>es-ES</language>`,
   });
