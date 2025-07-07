@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { baseUrl } from "@/config/site";
 import PageLayout from '../layouts/page.astro';
 import { Image } from 'astro:assets';
 import perspecticaImage from '../assets/img/perspectiva.png';
@@ -35,19 +36,19 @@ const meta = {
             </div>
             <div class="flex flex-1 flex-col gap-4 p-4">
                 <div class="grid auto-rows-min gap-4 md:grid-cols-2">
-                    <a href="/bitacora2/perspectiva" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <a href={`${baseUrl}/perspectiva`} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
                     <Image src={perspecticaImage} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
                     <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Perspectiva</span>
                     </a>
-                    <a href="/bitacora2/prototipo" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <a href={`${baseUrl}/prototipo`}  class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
                     <Image src={prototipoImage} alt="Prototipo" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
                     <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Prototipo</span>
                     </a>
-                    <a href="/bitacora2/decadencia" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <a href={`${baseUrl}/decadencia`} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
                     <Image src={decadenciaImage} alt="Decadencia" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
                     <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Decadencia</span>
                     </a>
-                    <a href="/bitacora2/herbrand" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <a href={`${baseUrl}/herbrand`} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
                     <Image src={herbrandImage} alt="Herbrand" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
                     <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Herbrand</span>
                     </a>
