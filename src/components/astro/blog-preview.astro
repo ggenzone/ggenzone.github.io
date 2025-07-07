@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  post: object;
+  url: string;
+}
+
+function truncate(text, maxLength) {
+  return text.length > maxLength
+    ? text.slice(0, maxLength).trim().replace(/\s+\S*$/, '') + '...'
+    : text;
+}
+
+const displayDate = (date) => {
+
+    return (
+        new Date(date).toLocaleDateString('es-ES', {
+            weekday: 'long', // 'short' o omite para no mostrar
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        })
+    )
+}
+
+
+const { post, url } = Astro.props;
+---
+
+
+
+<a href={url}>
+    <div class="w-full rounded-xl overflow-hidden  not-prose    bg-[var(--card-bg)] border-[var(--bs-body-bg)] bg-[var(--card-bg)] hover:bg-[var(--card-hover-bg)] shadow-[var(--card-shadow)] ">
+        <div class="md:flex">
+            <div class="md:shrink-0 md:hidden">
+                {post.data.image && (<Image class="h-48 w-full object-cover md:h-full md:w-48" src={post.data.image.path} alt={post.data.image.alt} />)}
+            </div>
+            <div class="p-8">
+                <a href={url} class="block mt-1 text-lg leading-tight font-regular text-[var(--heading-color)] mb-2">
+                    {post.data.title}
+                </a>
+                <p class="mt-2  mb-2 text-[var(--text-muted-color)]">
+                    {post.data.description}
+                </p>
+                <p class="flex text-sm justify-end text-[var(--text-muted-color)]">{displayDate(post.data.date)}</p>
+            </div>
+                <div class="md:shrink-0 hidden md:block">
+                {post.data.image && (<Image class="h-48 w-full object-cover md:h-full md:w-48" src={post.data.image.path} alt={post.data.image.alt} />)}
+            </div>
+        </div>
+    </div>
+</a>

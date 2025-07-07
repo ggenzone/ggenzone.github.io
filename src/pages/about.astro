@@ -1,0 +1,36 @@
+---
+import '../styles/home.css';
+import PageLayout from '../layouts/page.astro';
+
+const pageTitle = "Guido Genzone";
+
+const meta = {
+  title: pageTitle,
+  description: "Descripción breve del artículo.",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+  tags: ["astro", "seo", "ejemplo"]
+};
+
+---
+<PageLayout meta={meta}>
+  <div class="mb-24 mt-6 flex flex-col items-center justify-center px-6 pt-20">
+    <div class="flex w-full max-w-4xl flex-col gap-36 print:gap-10">
+      <div class="flex flex-col gap-6 print:mt-10 print:gap-2">
+        <h1 class="text-3xl md:text-6xl" style="font-variation-settings: 'wdth' 125;">
+          <span class="font-black">Guido</span>
+          <span class="font-extralight">Genzone</span>
+        </h1>
+        <h2 class="md:text-xl">Software engineer</h2>
+      </div>
+
+      <div class="leading-loose [&amp;_a]:font-bold [&amp;_a]:underline">
+        <p>I'm <strong>Guido</strong>, a freelance software engineer, living in Spain.</p>
+        <p>Currently I'm working for <a class="underline font-bold" href="https://bodycad.com/" target="_blank" rel="noreferrer nofollow">Bodycad</a>.</p>
+        <p>My open-source projects and experiments are available on <a class="underline font-bold" href="https://github.com/ggenzone" target="_blank" rel="noreferrer nofollow">GitHub</a>.</p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

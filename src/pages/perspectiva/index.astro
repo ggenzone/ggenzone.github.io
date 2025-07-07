@@ -1,0 +1,24 @@
+---
+import BlogLayout from '../../layouts/blog.astro';
+
+import BlogPostPreview from "../../components/astro/blog-preview.astro";
+
+import { latestPosts } from "../../lib/content";
+import { blog } from '../../data/perspectiva-blog.ts';
+
+const posts = await latestPosts("perspectiva");
+
+---
+<BlogLayout
+    title="ejemplo"
+    index={true}
+    blog={blog}
+>
+    <div class="grid grid-cols-1 gap-4 ">    
+        {posts.map(post => 
+            <div class=" bg-sidebar text-sidebar-foreground mt-2 rounded-xl">
+                <BlogPostPreview post={post} url={`/bitacora2/perspectiva/${post.id}`} />
+            </div>
+        )}
+    </div>
+</BlogLayout>
