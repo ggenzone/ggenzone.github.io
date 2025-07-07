@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ggenzone.github.io/bitcaora/sitemap-index.xml
