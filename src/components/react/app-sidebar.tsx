@@ -60,7 +60,7 @@ export function AppSidebar({ blog, ...props  }: { blog: Blog } & React.Component
           <SidebarSeparator />
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <a href={baseUrl}>
+              <a href={`${baseUrl}/`}>
                 <ArrowLeftIcon className="w-4 h-4 mr-2" />
                 <span>Volver</span>
               </a>
