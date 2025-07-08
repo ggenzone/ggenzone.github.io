@@ -12,10 +12,11 @@ export interface Menu {
 }
 
 export interface Blog {
+    home: string
     title: string;
     subtitle: string;
     description: string;
-    image: string;
+    image: ImageMetadata;
     rss: string;
     menu: Menu[];
 }

@@ -1,3 +1,43 @@
+import { blog as decadencia } from "./decadencia-blog";
+import { blog as prototipo } from "./prototipo-blog";
+import { blog as perspectiva } from "./perspectiva-blog";
+import { blog as herbrand } from "./herbrand-blog";
+
+import esp32Image from '../assets/img/esp32.png';
+import stm32Image from '../assets/img/stm32.png';
+import lvglImage from '../assets/img/lvgl.png';
+
+
 export const baseUrl = '';
 
 export const githubUrl = 'https://github.com/ggenzone/ggenzone.github.io';
+
+export const blogs = [
+    perspectiva,
+    prototipo,
+    decadencia,
+    herbrand
+];
+
+export const projects = [
+    {
+        title: "Microcontroladores e IoT",
+        badge: "IoT & Microcontroladores",
+        description: "Ejemplos prácticos y recursos para trabajar con microcontroladores como ESP32 y STM32, integrando interfaces gráficas, sensores y conectividad IoT.",
+        repos: [
+            {
+                title: "ESP32 Projects",
+                url: "https://github.com/ggenzone/iot/tree/main/esp32",
+                image: esp32Image
+            },{
+                title: "STM32 Projects",
+                url: "https://github.com/ggenzone/iot/",
+                image: stm32Image
+            }, {
+                title: "LVGL Projects",
+                url: "https://github.com/ggenzone/iot/",
+                image: lvglImage
+            }
+        ]
+    }
+]

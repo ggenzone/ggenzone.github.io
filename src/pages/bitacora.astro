@@ -1,13 +1,9 @@
 ---
 import '../styles/global.css';
 import { Badge } from "@/components/ui/badge"
-import { baseUrl } from "@/data/site";
+import { blogs } from "@/data/site";
 import PageLayout from '../layouts/page.astro';
 import { Image } from 'astro:assets';
-import perspecticaImage from '../assets/img/perspectiva.png';
-import prototipoImage from '../assets/img/prototipo.png';
-import decadenciaImage from '../assets/img/decadencia.png';
-import herbrandImage from '../assets/img/herbrand.png';
 
 const meta = {
   title: "Guido Genzone  | Cuadernos",
@@ -23,7 +19,7 @@ const meta = {
     <section class="py-20 md:py-32">
         <div class="container mx-auto px-4 md:px-6">
             <div class="text-center space-y-4 mb-16">
-                <Badge variant="secondary" class="w-fit mx-auto">
+                <Badge variant="secondary">
                     Bitácoras
                 </Badge>
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -35,22 +31,12 @@ const meta = {
             </div>
             <div class="flex flex-1 flex-col gap-4 p-4">
                 <div class="grid auto-rows-min gap-4 md:grid-cols-2">
-                    <a href={`${baseUrl}/perspectiva`} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
-                    <Image src={perspecticaImage} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Perspectiva</span>
-                    </a>
-                    <a href={`${baseUrl}/prototipo`}  class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
-                    <Image src={prototipoImage} alt="Prototipo" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Prototipo</span>
-                    </a>
-                    <a href={`${baseUrl}/decadencia`} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
-                    <Image src={decadenciaImage} alt="Decadencia" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Decadencia</span>
-                    </a>
-                    <a href={`${baseUrl}/herbrand`} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
-                    <Image src={herbrandImage} alt="Herbrand" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Herbrand</span>
-                    </a>
+                    {blogs.map(blog => (
+                        <a href={blog.home} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                            <Image src={blog.image} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                            <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">{blog.title}</span>
+                        </a>
+                    ))}
                 </div>
 	        </div>
         </div>

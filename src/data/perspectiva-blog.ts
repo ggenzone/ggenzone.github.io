@@ -1,13 +1,15 @@
-import { baseUrl } from "@/data/site";
 import { type Blog } from "@/types/blog";
 import {
   HomeIcon,
   BookOpenIcon,
 } from "lucide-react"
 
-export const getRelativeBaseUrl = (path: string) => `${baseUrl}/perspectiva/${path}`;
+import image from '../assets/img/perspectiva.png';
+
+export const getRelativeBaseUrl = (path: string) => `/perspectiva/${path}`;
 
 export const blog: Blog = {
+    home: getRelativeBaseUrl(''),
     title: "Perspectiva",
     subtitle: "Cuaderno",
     description: `Aquí recopilo y organizo ideas, conceptos y explicaciones relacionadas con finanzas, economía y temas afines.
@@ -18,7 +20,7 @@ Este cuaderno es un espacio personal para explorar, cuestionar y profundizar en 
 Espero que este registro me ayude a consolidar conocimientos y, quizás, a conectar con otras personas que estén en un proceso similar de aprendizaje.`,
   
     rss: getRelativeBaseUrl('rss.xml'),
-    image: getRelativeBaseUrl("perspectiva.png"),
+    image: image,
     menu: [
       {
         name: "Home",

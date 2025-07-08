@@ -3,11 +3,7 @@ import '../styles/global.css';
 import { Badge } from "@/components/ui/badge"
 import { Image } from 'astro:assets';
 import PageLayout from '../layouts/page.astro';
-import lvglImage from '../assets/img/lvgl.png';
-import esp32Image from '../assets/img/esp32.png';
-import stm32Image from '../assets/img/stm32.png';
-
-const pageTitle = 'Projects';
+import { projects } from '@/data/site';
 
 const meta = {
   title: "Guido Genzone | Projects",
@@ -19,46 +15,36 @@ const meta = {
 };
 ---
 <PageLayout meta={meta}>
-    <section id="features" class="py-20 md:py-32">
+  {projects.map(project => ( 
+    <section class="py-20 md:py-32">
         <div class="container mx-auto px-4 md:px-6">
           <div class="text-center space-y-4 mb-16">
-            <Badge variant="secondary" class="w-fit mx-auto">
-              IoT & Microcontroladores
+            <Badge variant="secondary">
+              {project.badge}
             </Badge>
             <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Microcontroladores e IoT
+              {project.title}
             </h2>
             <p class="text-xl text-muted-foreground max-w-[800px] mx-auto">
-              Ejemplos prácticos y recursos para trabajar con microcontroladores como ESP32 y STM32, integrando interfaces gráficas, sensores y conectividad IoT.
+              {project.description}
             </p>
           </div>
-        <div class="flex flex-1 flex-col gap-4 p-4">
+          <div class="flex flex-1 flex-col gap-4 p-4">
                 <div class="grid auto-rows-min gap-4 md:grid-cols-3">
 
-                    <a href="https://github.com/ggenzone/iot/tree/main/esp32" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative" target="_blank">
-                      <Image src={esp32Image} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                      <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow
-                                    bg-black/60 px-3 py-1 rounded-md">
-                        ESP32 Projects
-                      </span>
-                    </a>
-                    <a href="https://github.com/ggenzone/iot/" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative"  target="_blank">
-                      <Image src={stm32Image} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                      <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow
-                                    bg-black/60 px-3 py-1 rounded-md">
-                        STM32 Projects
-                      </span>
-                    </a>
-                    <a href="https://github.com/ggenzone/iot/" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative"  target="_blank">
-                      <Image src={lvglImage} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
-                      <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow
-                                    bg-black/60 px-3 py-1 rounded-md">
-                        LVGL Projects
-                      </span>
-                    </a>
+                    {project.repos.map(repo => (
+                      <a href={repo.url} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative" target="_blank">
+                        <Image src={repo.image} alt={repo.title} class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                        <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow
+                                      bg-black/60 px-3 py-1 rounded-md">
+                          {repo.title}
+                        </span>
+                      </a>
+                    ))}
                 </div>
 	        </div>
         </div>
     </section>
 
+  ))}
 </PageLayout>
