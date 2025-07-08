@@ -16,7 +16,7 @@ const displayDate = (date) => {
 
     return (
         new Date(date).toLocaleDateString('es-ES', {
-            weekday: 'long', // 'short' o omite para no mostrar
+            weekday: 'short', // 'short' o omite para no mostrar
             year: 'numeric',
             month: 'long',
             day: 'numeric',
@@ -29,25 +29,27 @@ const { post, url } = Astro.props;
 ---
 
 
-
 <a href={url}>
-    <div class="w-full rounded-xl overflow-hidden  not-prose    bg-[var(--card-bg)] border-[var(--bs-body-bg)] bg-[var(--card-bg)] hover:bg-[var(--card-hover-bg)] shadow-[var(--card-shadow)] ">
+    <article class="w-full rounded-md overflow-hidden not-prose border-sidebar-border border-1 shadown-sm bg-sidebar text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground">
         <div class="md:flex">
             <div class="md:shrink-0 md:hidden">
                 {post.data.image && (<Image class="h-48 w-full object-cover md:h-full md:w-48" src={post.data.image.path} alt={post.data.image.alt} />)}
             </div>
-            <div class="p-8">
-                <a href={url} class="block mt-1 text-lg leading-tight font-regular text-[var(--heading-color)] mb-2">
+            <div class="p-6">
+                <div class="flex items-center gap-x-4 text-xs">
+                    <time datetime={displayDate(post.data.date)} class="text-muted-foreground">{displayDate(post.data.date)}</time>
+                    <!--a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a-->
+                </div>
+                <h2 class="block mt-1 mt-3 text-lg/6 font-medium tracking-tight mb-2 text-sidebar-foreground/90">
                     {post.data.title}
-                </a>
-                <p class="mt-2  mb-2 text-[var(--text-muted-color)]">
+                </h2>
+                <p class="mb-2 text-muted-foreground text-sm">
                     {post.data.description}
                 </p>
-                <p class="flex text-sm justify-end text-[var(--text-muted-color)]">{displayDate(post.data.date)}</p>
             </div>
                 <div class="md:shrink-0 hidden md:block">
                 {post.data.image && (<Image class="h-48 w-full object-cover md:h-full md:w-48" src={post.data.image.path} alt={post.data.image.alt} />)}
             </div>
         </div>
-    </div>
+    </article>
 </a>
