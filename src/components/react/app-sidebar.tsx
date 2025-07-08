@@ -18,7 +18,7 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar"
 import type { Blog } from "@/types/blog"
-import { baseUrl } from "@/config/site"
+import { baseUrl } from "@/data/site"
 
 export function AppSidebar({ blog, ...props  }: { blog: Blog } & React.ComponentProps<typeof Sidebar>) {
   return (

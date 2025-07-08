@@ -1,11 +1,9 @@
 ---
 import '../styles/global.css';
 import BlogPage from "../app/blog.tsx"
-import type { Blog } from '../data/blog';
+import type { Blog } from '@types/blog';
 import MainLayout from './main.astro';
-import ThemeIcon from '../components/astro/theme-icon.astro';
 import { Image } from 'astro:assets';
-import { baseUrl } from '@/config/site';
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
@@ -25,7 +23,6 @@ const displayDate = (date) => {
 const meta = {
   title: frontmatter.title,
   description: frontmatter.description,
-  //image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
   type: "article",
   siteName: blog.title,
   author: frontmatter.author,
@@ -37,48 +34,47 @@ const meta = {
 ---
 
 <MainLayout meta={meta}>
-<div class="blog">
-    <BlogPage client:load defaultSidebarOpen={defaultSidebarOpen} blog={blog}>
-        <div class="mx-auto grid w-full max-w-2xl grid-cols-1 gap-10 xl:max-w-6xl xl:grid-cols-[minmax(0,1fr)_var(--container-2xs)]">
-            <div class="p-4 pt-10 pb-24 sm:px-6 xl:pr-0 bg-sidebar text-sidebar-foreground">
+    <div class="blog">
+        <BlogPage client:load defaultSidebarOpen={defaultSidebarOpen} blog={blog}>
+            <div class="mx-auto grid w-full max-w-2xl grid-cols-1 gap-10 xl:max-w-6xl xl:grid-cols-[minmax(0,1fr)_var(--container-2xs)]">
+                <div class="p-4 pt-10 pb-24 sm:px-6 xl:pr-0 bg-sidebar text-sidebar-foreground">
 
-        <div class="px-4 pt-10 pb-24 sm:px-6 xl:pr-0">  
-          <p class="flex items-center gap-2 font-mono text-xs/6 font-medium tracking-widest text-gray-600 uppercase dark:text-gray-400" data-section="true">{displayDate(frontmatter.date)}</p>
-<h1 data-title="true" class="mt-2 text-3xl font-medium tracking-tight text-gray-950 dark:text-white">{frontmatter.title}</h1>
+                    <div class="px-4 pt-10 pb-24 sm:px-6 xl:pr-0">  
+                        <p class="flex items-center gap-2 font-mono text-xs/6 font-medium tracking-widest text-gray-600 uppercase dark:text-gray-400" data-section="true">{displayDate(frontmatter.date)}</p>
+                        <h1 data-title="true" class="mt-2 text-3xl font-medium tracking-tight text-gray-950 dark:text-white">{frontmatter.title}</h1>
 
-          {frontmatter.image && (
-    <div class="not-prose relative overflow-hidden rounded-xl h-[350px] mt-4 mb-4 m-4">
-    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-slate-950/10 ring-inset dark:ring-white/10"></div>
-    <Image alt={frontmatter.image.alt} loading="lazy" class="h-[350px] w-full object-none" data-nimg="1"  
-        src={frontmatter.image.path}
-    />
-    </div>
-)}
-            </div>
+                        {frontmatter.image && (
+                            <div class="not-prose relative overflow-hidden rounded-xl h-[350px] mt-4 mb-4 m-4">
+                                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-slate-950/10 ring-inset dark:ring-white/10"></div>
+                                <Image alt={frontmatter.image.alt} loading="lazy" class="h-[350px] w-full object-none" data-nimg="1"  
+                                    src={frontmatter.image.path}
+                                />
+                            </div>
+                    )}
+                    </div>
  
-            <article class="p-4
-                prose 
-                dark:prose-invert 
-                
-                max-w-none
-                
-                prose-sm
-                prose-h1:font-bold 
-                prose-h1:text-xl
+                    <article class="p-4
+                        prose 
+                        dark:prose-invert 
+                        
+                        max-w-none
+                        
+                        prose-sm
+                        prose-h1:font-bold 
+                        prose-h1:text-xl
 
-                prose-headings:tracking-tight
-                prose-headings:font-medium
+                        prose-headings:tracking-tight
+                        prose-headings:font-medium
 
-                prose-headings:text-gray-950 
-                dark:prose-headings:text-white
+                        prose-headings:text-gray-950 
+                        dark:prose-headings:text-white
 
-                prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
-            ">
-                <slot>
-            </article>
-          </div>
-      </div>
-
-    </Page>
+                        prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+                    ">
+                        <slot>
+                    </article>
+                </div>
+            </div>
+        </Page>
     </div>
 </MainLayout>

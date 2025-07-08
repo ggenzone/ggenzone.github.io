@@ -1,8 +1,8 @@
 {
-  "name": "bitacora2",
+  "name": "genzone.github.io",
   "type": "module",
   "version": "0.0.1",
-  "homepage": "https://ggenzone.github.io/bitacora2/",
+  "homepage": "https://ggenzone.github.io/",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

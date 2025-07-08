@@ -1,4 +1,4 @@
-import { baseUrl } from "@/config/site";
+import { baseUrl } from "@/data/site";
 import { type Blog } from "@/types/blog";
 import {
   HomeIcon,

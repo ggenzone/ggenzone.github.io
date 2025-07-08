@@ -6,14 +6,13 @@ import type { MetaProps } from '@/types/meta.ts';
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
-const { title } = Astro.props
 const { meta }: { meta: MetaProps } = Astro.props;
 
 ---
 
 
 <MainLayout meta={meta} >
-    <div className="min-h-screen bg-baground text-foreground ">
+    <div class="min-h-screen bg-baground text-foreground ">
         <Header />
         <slot>
     </div>

@@ -9,7 +9,6 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ggenzone.github.io',
-  base: 'bitacora',
   vite: {
       plugins: [tailwindcss()]
     },

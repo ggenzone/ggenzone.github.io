@@ -1,9 +1,8 @@
 ---
 import '../styles/global.css';
 import BlogPage from "../app/blog.tsx"
-import type { Blog } from '../data/blog';
+import type { Blog } from '@/types/blog';
 import MainLayout from './main.astro';
-import ThemeIcon from '../components/astro/theme-icon.astro';
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
