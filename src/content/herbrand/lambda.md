@@ -4,8 +4,9 @@ date: 2025-04-05
 categories: [matemáticas, computación teórica]
 tags: [lambda cálculo, lógica, computación, álgebra]
 image:
-  path: ../../assets/img/posts/bretton-woods-header.png
+  path: ../../assets/img/posts/herbrand/lambda-calculo.png
   alt: Representación del Lambda Cálculo
+description: "Explora los fundamentos y aplicaciones del lambda cálculo, el sistema formal desarrollado por Alonzo Church en los años 1930 que revolucionó la computación teórica. Descubre sus conceptos clave, propiedades, ejemplos prácticos y su influencia en la computación moderna."
 ---
 
 ## Introducción
