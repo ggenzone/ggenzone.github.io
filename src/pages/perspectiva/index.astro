@@ -9,11 +9,7 @@ import { blog, getRelativeBaseUrl } from '../../data/perspectiva-blog.ts';
 const posts = await latestPosts("perspectiva");
 
 ---
-<BlogLayout
-    title="ejemplo"
-    index={true}
-    blog={blog}
->
+<BlogLayout blog={blog}>
     <div class="grid grid-cols-1 gap-4 ">    
         {posts.map(post => 
             <div class=" bg-sidebar text-sidebar-foreground mt-2 rounded-xl">

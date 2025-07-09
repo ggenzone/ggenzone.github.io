@@ -4,9 +4,13 @@ import BlogPage from "../app/blog.tsx"
 import type { Blog } from '@/types/blog';
 import MainLayout from './main.astro';
 
+interface Props  {
+  blog: Blog;
+}
+
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
-const { blog } = Astro.props as MarkdownLayoutProps & { blog: Blog };
+const { blog } = Astro.props;
 
 
 const meta = {

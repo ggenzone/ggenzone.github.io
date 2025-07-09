@@ -1,14 +1,19 @@
 ---
 import '../styles/global.css';
 import BlogPage from "../app/blog.tsx"
-import type { Blog } from '@types/blog';
+import type { Blog } from '@/types/blog';
+import type { MarkdownLayoutProps } from 'astro';
 import MainLayout from './main.astro';
 import BlogToc from '../components/astro/blog-toc.astro';
 import { Image } from 'astro:assets';
 
+interface Props extends MarkdownLayoutProps<Blog> {
+  blog: Blog;
+}
+
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
-const { blog, frontmatter, headings} = Astro.props as MarkdownLayoutProps & { blog: Blog };
+const { blog, frontmatter, headings} = Astro.props
 
 const displayDate = (date) => {
     return (

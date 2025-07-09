@@ -24,10 +24,11 @@ const blogCollection = (folder: string) => defineCollection({
 const perspectivaCollection = blogCollection('perspectiva')
 const prototipoCollection = blogCollection('prototipo')
 const herbrandCollection = blogCollection('herbrand')
-
+const decadenciaCollection = blogCollection('decadencia')
 
 export const collections = {
   prototipo: prototipoCollection,
   perspectiva: perspectivaCollection,
-  herbrand: herbrandCollection
+  herbrand: herbrandCollection,
+  decadencia: decadenciaCollection
 };

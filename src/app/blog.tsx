@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sidebar"
 
 export default function BlogPage(props : { blog: Blog, children: ReactNode }) {
-  console.log("BlogPage props", props.blog)
   return (
     <div className="[--header-height:calc(--spacing(14))]">
       <SidebarProvider className="flex flex-col">
