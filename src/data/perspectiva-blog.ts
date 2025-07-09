@@ -6,7 +6,7 @@ import {
 
 import image from '../assets/img/perspectiva.png';
 
-export const getRelativeBaseUrl = (path: string) => `/perspectiva/${path}`;
+export const getRelativeBaseUrl = (path: string) => `/perspectiva${path}`;
 
 export const blog: Blog = {
     home: getRelativeBaseUrl(''),
@@ -19,7 +19,7 @@ Este cuaderno es un espacio personal para explorar, cuestionar y profundizar en 
 
 Espero que este registro me ayude a consolidar conocimientos y, quizás, a conectar con otras personas que estén en un proceso similar de aprendizaje.`,
   
-    rss: getRelativeBaseUrl('rss.xml'),
+    rss: getRelativeBaseUrl('/rss.xml'),
     image: image,
     menu: [
       {
@@ -41,7 +41,7 @@ Espero que este registro me ayude a consolidar conocimientos y, quizás, a conec
       */
       {
         name: "Bibliografia",
-        url: getRelativeBaseUrl('bibliografia'),
+        url: getRelativeBaseUrl('/bibliografia'),
         icon: BookOpenIcon
       }
     ]

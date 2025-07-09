@@ -6,7 +6,7 @@ import {
 
 import image from '../assets/img/prototipo.png';
 
-export const getRelativeBaseUrl = (path: string) => `/prototipo/${path}`;
+export const getRelativeBaseUrl = (path: string) => `/prototipo${path}`;
 
 export const blog: Blog = {
     home: getRelativeBaseUrl(''),
@@ -15,7 +15,7 @@ export const blog: Blog = {
     description: `Este es mi espacio para documentar lo que aprendo haciendo: software, electrónica, IoT, impresión 3D y más.
 
 No es un manual ni un portfolio; es un laboratorio de apuntes en proceso.`,
-    rss: getRelativeBaseUrl('rss.xml'),
+    rss: getRelativeBaseUrl('/rss.xml'),
     image: image,
     menu: [
       {
@@ -25,17 +25,17 @@ No es un manual ni un portfolio; es un laboratorio de apuntes en proceso.`,
       },
       {
           name: "Inventario",
-          url: getRelativeBaseUrl("inventario"),
+          url: getRelativeBaseUrl("/inventario"),
           icon: HomeIcon,
       },
       {
         name: "Microcontroladores",
-        url: getRelativeBaseUrl("microcontroladores"),
+        url: getRelativeBaseUrl("/microcontroladores"),
         icon: HomeIcon
       },
       {
         name: "Recursos",
-        url: getRelativeBaseUrl("recursos"),
+        url: getRelativeBaseUrl("/recursos"),
         icon: BookOpenIcon
       }
     ]
