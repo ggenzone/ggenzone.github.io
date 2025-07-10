@@ -6,6 +6,7 @@ import { blog as herbrand } from "./herbrand-blog";
 import esp32Image from '../assets/img/esp32.png';
 import stm32Image from '../assets/img/stm32.png';
 import lvglImage from '../assets/img/lvgl.png';
+import portfolioToolsImage from '../assets/img/portfolio-tools.png';
 
 
 export const baseUrl = '';
@@ -37,6 +38,18 @@ export const projects = [
                 title: "LVGL Projects",
                 url: "https://github.com/ggenzone/iot/",
                 image: lvglImage
+            }
+        ]
+    },
+    {
+        title: "Herramientas de Finanzas",
+        badge: "Finanzas & Python",
+        description: "Conjunto de herramientas en Python para análisis y seguimiento de carteras de activos financieros. Incluye utilidades para evaluar el rendimiento, diversificación y riesgos de portafolios.",
+        repos: [
+            {
+                title: "Portfolio Tools",
+                url: "https://github.com/ggenzone/portfolio-tools",
+                image: portfolioToolsImage
             }
         ]
     }
