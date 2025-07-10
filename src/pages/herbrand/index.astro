@@ -13,7 +13,7 @@ const posts = await latestPosts("herbrand");
     <div class="grid grid-cols-1 gap-4 ">    
         {posts.map(post => 
             <div class=" bg-sidebar text-sidebar-foreground mt-2 rounded-xl">
-                <BlogPostPreview post={post} url={getRelativeBaseUrl(post.id)} />
+                <BlogPostPreview post={post} url={getRelativeBaseUrl(`/${post.id}`)} />
             </div>
         )}
     </div>
