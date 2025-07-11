@@ -40,6 +40,11 @@ Espero que este registro me ayude a consolidar conocimientos y, quizás, a conec
       },
       */
       {
+        name: "Calculadoras",
+        url: getRelativeBaseUrl('/calculadora'),
+        icon: BookOpenIcon
+      },
+      {
         name: "Bibliografia",
         url: getRelativeBaseUrl('/bibliografia'),
         icon: BookOpenIcon

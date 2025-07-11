@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import pagefind from "astro-pagefind";
 import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -16,5 +17,5 @@ export default defineConfig({
   build: {
     format: "file",
   },
-  integrations: [react(), sitemap(), pagefind()]
+  integrations: [react(), sitemap(), pagefind(), mdx()],
 });

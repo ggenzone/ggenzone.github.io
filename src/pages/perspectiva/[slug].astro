@@ -16,7 +16,7 @@ const { Content } = await render(post);
 
 <PostLayout
     frontmatter={post.data}
-    headings={post.rendered.metadata.headings} 
+    headings={post.rendered?.metadata?.headings || []} 
     blog={blog}
 >
   <Content />
