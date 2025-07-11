@@ -16,8 +16,8 @@ export default function ValorFuturo() {
   };
 
   return (
-    <div className="p-2 border rounded w-full">
-      <h3>Calculadora de Valor Futuro</h3>
+    <div className="p-4 border rounded w-full">
+      <h3 className="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0">Calculadora de Valor Futuro</h3>
       <div className="grid w-full max-w-sm items-center gap-3">
         <Label htmlFor="capital_inicial">Capital inicial:</Label>
         <Input type="number" id="capital_inicial" value={capital} onChange={(e) => setCapital(+e.target.value)} placeholder="Capital inicial" />
