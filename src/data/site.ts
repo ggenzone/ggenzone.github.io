@@ -47,8 +47,8 @@ export const projects = [
         description: "Conjunto de herramientas en Python para análisis y seguimiento de carteras de activos financieros. Incluye utilidades para evaluar el rendimiento, diversificación y riesgos de portafolios.",
         repos: [
             {
-                title: "Portfolio Tools",
-                url: "https://github.com/ggenzone/portfolio-tools",
+                title: "Portfolio Toolkit",
+                url: "https://ggenzone.github.io/portfolio-toolkit",
                 image: portfolioToolsImage
             }
         ]
