@@ -45,6 +45,16 @@ Espero que este registro me ayude a consolidar conocimientos y, quizás, a conec
         icon: BookOpenIcon
       },
       {
+        name: "Recursos",
+        url: getRelativeBaseUrl("/recursos"),
+        icon: BookOpenIcon
+      },
+    {
+        name: "Glosario",
+        url: getRelativeBaseUrl("/glosario"),
+        icon: BookOpenIcon
+      },
+      {
         name: "Bibliografia",
         url: getRelativeBaseUrl('/bibliografia'),
         icon: BookOpenIcon

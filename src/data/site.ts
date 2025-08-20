@@ -16,31 +16,13 @@ export const githubUrl = 'https://github.com/ggenzone/ggenzone.github.io';
 export const blogs = [
     perspectiva,
     prototipo,
+    /*
     decadencia,
     herbrand
+    */
 ];
 
 export const projects = [
-    {
-        title: "Microcontroladores e IoT",
-        badge: "IoT & Microcontroladores",
-        description: "Ejemplos prácticos y recursos para trabajar con microcontroladores como ESP32 y STM32, integrando interfaces gráficas, sensores y conectividad IoT.",
-        repos: [
-            {
-                title: "ESP32 Projects",
-                url: "https://github.com/ggenzone/iot/tree/main/esp32",
-                image: esp32Image
-            },{
-                title: "STM32 Projects",
-                url: "https://github.com/ggenzone/iot/",
-                image: stm32Image
-            }, {
-                title: "LVGL Projects",
-                url: "https://github.com/ggenzone/iot/",
-                image: lvglImage
-            }
-        ]
-    },
     {
         title: "Herramientas de Finanzas",
         badge: "Finanzas & Python",
@@ -50,6 +32,26 @@ export const projects = [
                 title: "Portfolio Toolkit",
                 url: "https://ggenzone.github.io/portfolio-toolkit",
                 image: portfolioToolsImage
+            }
+        ]
+    },
+    {
+        title: "Microcontroladores e IoT",
+        badge: "IoT & Microcontroladores",
+        description: "Ejemplos prácticos y recursos para trabajar con microcontroladores como ESP32 y STM32, integrando interfaces gráficas, sensores y conectividad IoT.",
+        repos: [
+            {
+                title: "ESP32 Projects",
+                url: "https://github.com/ggenzone/maker/tree/main/code/esp32",
+                image: esp32Image
+            },{
+                title: "STM32 Projects",
+                url: "https://github.com/ggenzone/iot/",
+                image: stm32Image
+            }, {
+                title: "LVGL Projects",
+                url: "https://github.com/ggenzone/maker/tree/main/code/esp32",
+                image: lvglImage
             }
         ]
     }

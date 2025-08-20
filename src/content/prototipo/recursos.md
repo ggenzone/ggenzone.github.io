@@ -6,6 +6,8 @@ visible: false
 
 ## Recursos
 
+### Repo
+- [Main repo](https://github.com/ggenzone/maker)
 
 ### Blogs
 - [HACKADAY](https://www.youtube.com/@hackaday)

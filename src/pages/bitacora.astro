@@ -33,7 +33,7 @@ const meta = {
                 <div class="grid auto-rows-min gap-4 md:grid-cols-2">
                     {blogs.map(blog => (
                         <a href={blog.home} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
-                            <Image src={blog.image} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                            <Image src={blog.image} alt={blog.title} class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
                             <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">{blog.title}</span>
                         </a>
                     ))}
