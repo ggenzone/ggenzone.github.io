@@ -47,3 +47,10 @@ visible: false
 | Rotatory Encoder KY-040              |          | 5        | [[Link]](https://es.aliexpress.com/item/1005006551162496.html) |
 | Audio Amplifier Module, I2S DAC      | MAX98357 | 2        |                                                                                  |
 | Mini altavoz 3W 4 Ohm                |          | 2        |                                                                                  |
+| ESP8266 WiFi Module               |  ESP-12S       | 1        |                                                                                  |
+| AS5600 Magnetic Encoder               |  AS5600       | 1        | [[Link](https://es.aliexpress.com/item/1005007884242569.html)]                                                                                 |
+| Módulo de presión de aire y humedad    |  AHT20 + BMP280       | 2        | [[Link](https://es.aliexpress.com/item/1005005982427374.html)]      |
+| Módulo Transceptor RF   |  NRF24L01      | 5        |     |
+| Adaptador NRF24L01      |                | 2        |           |
+| Módulo Transceptor RF  Antena |  NRF24L01 PA+LNA     | 2        |     |
+

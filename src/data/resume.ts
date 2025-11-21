@@ -40,7 +40,7 @@ const resume: Resume = {
   tagline: "Software engineer",
   experiences: [
     {
-      date: "Mar 2024 – Present",
+      date: "Mar 2024 – Jan 2025",
       role: "Senior Software Engineer",
       place: "[Bodycad](https://bodycad.com)",
       type: "Full-time",
@@ -162,10 +162,10 @@ const resume: Resume = {
     }
   ],
   skills: [
-    "Languages: PHP, JavaScript,C ,Ruby, TypeScript, Haskell, Ocaml",
-    "Frameworks: Symfony, Zend, Probot",
+    "Languages: PHP, JavaScript, C ,Ruby, TypeScript, Python, Haskell, Ocaml",
+    "Frameworks: Symfony, Zend, Probot, NestJS, Expo, ESP-IDF",
     "Libraries: ReactJS, Tailwind, ReactNative",
-    "Tools: Docker, Markdown, MySQL, Postgres, MongoDB"
+    "Tools: Docker, MySQL, Postgres, MongoDB, Redis"
   ],
   contacts: [
     { name: "Linkedin:", url: "[linkedin.com/in/guido-genzone-01a274179](https://linkedin.com/in/guido-genzone-01a274179/)" },

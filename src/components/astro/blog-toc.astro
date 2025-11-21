@@ -1,5 +1,6 @@
 ---
 const { headings, url } = Astro.props
+const rootHeadings = headings.filter((h) => h.depth === 2);
 ---
 
     <div class="max-xl:hidden">
@@ -17,12 +18,12 @@ const { headings, url } = Astro.props
             </a>
             </li>
             */}
-            {headings.map((i) => (
-            <li class="-ml-px flex flex-col items-start gap-2">
-                <a class="inline-block border-l border-transparent text-xs text-muted-foreground hover:text-muted-foreground/25 hover:text-gray-950 sm:text-sm/6 dark:text-gray-300 dark:hover:border-white/25 dark:hover:text-white aria-[current]:border-gray-950 aria-[current]:font-semibold   pl-5 sm:pl-4" type="button" data-headlessui-state="" href={`${url}/#${i.slug}`}>
-                {i.text}
-                </a>
-            </li>
+            {rootHeadings.map((i) => (
+                <li class="-ml-px flex flex-col items-start gap-2">
+                    <a class="inline-block border-l border-transparent text-xs text-muted-foreground hover:text-muted-foreground/25 hover:text-gray-950 sm:text-sm/6 dark:text-gray-300 dark:hover:border-white/25 dark:hover:text-white aria-[current]:border-gray-950 aria-[current]:font-semibold   pl-5 sm:pl-4" type="button" data-headlessui-state="" href={`${url}/#${i.slug}`}>
+                    {i.text}
+                    </a>
+                </li>
             ))}
         </ul>
         </div>
