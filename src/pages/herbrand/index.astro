@@ -1,0 +1,20 @@
+---
+import BlogLayout from '../../layouts/blog.astro';
+
+import BlogPostPreview from "../../components/astro/blog-preview.astro";
+
+import { latestPosts } from "../../lib/content";
+import { blog, getRelativeBaseUrl } from '../../data/herbrand-blog.ts';
+
+const posts = await latestPosts("herbrand");
+
+---
+<BlogLayout blog={blog}>
+    <div class="grid grid-cols-1 gap-4 ">    
+        {posts.map(post => 
+            <div class=" bg-sidebar text-sidebar-foreground mt-2 rounded-xl">
+                <BlogPostPreview post={post} url={getRelativeBaseUrl(`/${post.id}`)} />
+            </div>
+        )}
+    </div>
+</BlogLayout>

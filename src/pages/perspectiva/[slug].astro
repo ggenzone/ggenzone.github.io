@@ -1,0 +1,23 @@
+---
+import PostLayout from '../../layouts/post.astro';
+import { getCollection, render } from 'astro:content';
+import { blog } from '../../data/perspectiva-blog.ts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('perspectiva');
+  return posts.map(post => ({
+    params: { slug: post.id }, props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<PostLayout
+    frontmatter={post.data}
+    headings={post.rendered?.metadata?.headings || []} 
+    blog={blog}
+>
+  <Content />
+</PostLayout>

@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+import MainLayout from './main.astro';
+import Header from "../components/astro/header.astro"
+import type { MetaProps } from '@/types/meta.ts';
+
+interface Props {
+    meta: MetaProps;
+}
+
+const { meta } = Astro.props;
+---
+
+
+<MainLayout meta={meta} >
+    <div class="min-h-screen bg-baground text-foreground ">
+        <Header />
+        <slot>
+    </div>
+</MainLayout>

@@ -1,0 +1,31 @@
+---
+import MainLayout from '../../../layouts/main.astro';
+
+import { latestPosts } from "../../../lib/content";
+import { collections } from "../../../content/config.ts"
+import { blog } from '../../../data/perspectiva-blog.ts';
+
+const allPosts = await latestPosts("perspectiva");
+
+const today = new Date().toISOString();
+const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
+const pageTitle = "Tag Index";
+
+const meta = {
+  title: `${blog.title} | Tags`,
+  description: blog.description,
+  type: "article",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: today,
+  modifiedTime: today
+};
+---
+
+<MainLayout meta={meta}>
+  <div>
+    {tags.map((tag) => (
+      <p><a href={`/bitacora/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
+</MainLayout>

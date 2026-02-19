@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../../layouts/main.astro';
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../perspectiva/*.md', { eager: true }));
+  
+  const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+
+}
+
+const { tag } = Astro.params;
+const { posts, url  } = Astro.props;
+
+const meta = {
+  title: tag,
+  description: "Descripción breve del artículo.",
+  url: url.href,
+  image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
+  type: "article",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+  tags: ["astro", "seo", "ejemplo"]
+};
+
+//const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
+---
+<MainLayout meta={meta}>
+  <ul>
+    {posts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  </ul>
+</MainLayout>

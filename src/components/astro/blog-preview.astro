@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  post: object;
+  url: string;
+}
+
+function truncate(text, maxLength) {
+  return text.length > maxLength
+    ? text.slice(0, maxLength).trim().replace(/\s+\S*$/, '') + '...'
+    : text;
+}
+
+const displayDate = (date) => {
+
+    return (
+        new Date(date).toLocaleDateString('es-ES', {
+            weekday: 'short', // 'short' o omite para no mostrar
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        })
+    )
+}
+
+
+const { post, url } = Astro.props;
+---
+
+
+<a href={url}>
+    <article class="w-full rounded-md overflow-hidden not-prose border-sidebar-border border-1 shadown-sm bg-sidebar text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground">
+        <div class="md:flex">
+            <div class="md:shrink-0 md:hidden">
+                {post.data.image && (<Image class="h-48 w-full object-cover md:h-full md:w-48" src={post.data.image.path} alt={post.data.image.alt} />)}
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-x-4 text-xs">
+                    <time datetime={displayDate(post.data.date)} class="text-muted-foreground">{displayDate(post.data.date)}</time>
+                    <!--a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a-->
+                </div>
+                <h2 class="block mt-1 mt-3 text-lg/6 font-medium tracking-tight mb-2 text-sidebar-foreground/90">
+                    {post.data.title}
+                </h2>
+                <p class="mb-2 text-muted-foreground text-sm">
+                    {post.data.description}
+                </p>
+            </div>
+                <div class="md:shrink-0 hidden md:block">
+                {post.data.image && (<Image class="h-48 w-full object-cover md:h-full md:w-48" src={post.data.image.path} alt={post.data.image.alt} />)}
+            </div>
+        </div>
+    </article>
+</a>

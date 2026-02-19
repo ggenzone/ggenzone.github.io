@@ -1,0 +1,169 @@
+---
+import '../styles/home.css';
+import PageLayout from '../layouts/page.astro';
+
+import resume from '@/data/resume';
+
+const meta = {
+  title: "Guido Genzone | Resume",
+  description: "I'm Guido a freelance software engineer, living in Spain.",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+};
+
+function parseMarkdownLink(markdown: string) {
+  const match = markdown.match(/^\s*\[([^\]]+)\]\(([^)]+)\)\s*$/);
+  if (!match) return markdown;
+  const [, text, url] = match;
+  return `<a href="${url}" target="_blank" rel="noreferrer nofollow">${text}</a>`;
+}
+
+---
+<PageLayout meta={meta}>
+    <div class="pt-20 print:pt-4">
+      <div class="mb-24 mt-6 flex flex-col items-center justify-center px-6">
+        <div class="flex w-full max-w-4xl flex-col gap-36 print:gap-10">
+          <div class="flex flex-col gap-6 print:mt-10 print:gap-2">
+            <h1 class="text-3xl md:text-6xl" style="font-variation-settings: 'wdth' 125;"><span class="font-black">Guido</span>
+            <span class="font-extralight">Genzone</span></h1>
+            <h2 class="md:text-xl">Software engineer</h2></div>
+
+
+            {resume.experiences && resume.experiences.length && (
+              <div class="flex flex-col gap-16 print:gap-6 lg:gap-6">
+                <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                  <div class="print:col-start-2 lg:col-span-3 lg:col-start-2">
+                    <h2 class="text-2xl font-bold text-blue-600">Experience</h2>
+                  </div>
+                </div>
+
+                {resume.experiences.map((experience) => (
+                  <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                    <div class="print:text-right lg:text-right">
+                      <span class="text-black/60 dark:text-white">
+                        {experience.date}
+                      </span>
+                    </div>
+                    <div class="print:col-span-3 lg:col-span-3">
+                      <h2 class="inline font-bold">
+                        {experience.role}
+                      </h2>
+                      <span class="[&_a]:underline">
+                        {experience.place && (
+                          <>
+                            at
+                            <span set:html={parseMarkdownLink(experience.place)} />
+                          </>
+                        )}
+                        {experience.location && (<span>({experience.location})</span> )}
+                      </span>
+                    </div>
+                    <div class="print:text-right lg:text-right">
+                      <span class="text-sm text-black/60 dark:text-white">
+                        {experience.type}
+                      </span>
+                    </div>
+                    <div class="print:col-span-3 lg:col-span-3">
+                      {experience.desc && (
+                        <p>
+                          {experience.desc}
+                        </p>
+                      )}
+                      <ul class="mx-5 my-2 flex list-disc flex-col gap-1 text-sm">
+                        {experience.bullets.map(bullet => (
+                          <li class="[&_a]:underline" set:html={parseMarkdownLink(bullet)} />
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {resume.educations && resume.educations.length && (
+              <div class="flex flex-col gap-16 print:gap-6 lg:gap-6">
+                <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                  <div class="print:col-start-2 lg:col-span-3 lg:col-start-2">
+                    <h2 class="text-2xl font-bold text-blue-600">Education</h2>
+                  </div>
+                </div>
+
+                {resume.educations.map(education => (
+                  <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                    <div class="print:text-right lg:text-right">
+                      <span class="text-black/60 dark:text-white">
+                        {education.date}
+                      </span>
+                    </div>
+                    <div class="print:col-span-3 lg:col-span-3">
+                      <h2 class="inline font-bold">
+                        {education.degree}
+                      </h2>
+                      <span>
+                        at
+                        {education.place}
+                      </span>
+                    </div>
+                    <div class="print:text-right lg:text-right">
+                      <span class="text-sm text-black/60 dark:text-white" />
+                    </div>
+                    <div class="print:col-span-3 lg:col-span-3">
+                      <p>
+                        {education.location}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {resume.skills && resume.skills.length && (
+              <div class="flex flex-col gap-16 print:gap-6 lg:gap-6">
+                <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                  <div class="print:col-span-3 print:col-start-2 lg:col-span-3 lg:col-start-2">
+                    <h2 class="text-2xl font-bold text-blue-600">Skills and Tech Stack</h2>
+                  </div>
+                </div>
+
+                <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                  <div class="print:col-span-3 print:col-start-2 lg:col-span-3 lg:col-start-2">
+                    <ul class="mx-5 my-2 flex list-disc flex-col gap-1 text-sm">
+                      {resume.skills.map(skill => (
+                        <li>
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {resume.contacts && resume.contacts.length && (
+              <div class="flex flex-col gap-16 print:gap-6 lg:gap-6">
+                <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                  <div class="print:col-span-3 print:col-start-2 lg:col-span-3 lg:col-start-2">
+                    <h2 class="text-2xl font-bold text-blue-600">Contact Info</h2>
+                  </div>
+                </div>
+
+                <div class="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
+                  <div class="print:col-span-3 print:col-start-2 lg:col-span-3 lg:col-start-2">
+                    <ul class="mx-5 my-2 flex list-disc flex-col gap-1 text-sm">
+                      {resume.contacts.map(contact => (
+                        <li class="[&_a]:underline" >
+                          {contact.name}: <span set:html={parseMarkdownLink(contact.url)} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+      </div>
+    </div>  
+  </div>
+</PageLayout>

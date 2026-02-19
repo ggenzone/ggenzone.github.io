@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import { Badge } from "@/components/ui/badge"
+import { Image } from 'astro:assets';
+import PageLayout from '../layouts/page.astro';
+import { projects } from '@/data/site';
+
+const meta = {
+  title: "Guido Genzone | Projects",
+  description: "I'm Guido a freelance software engineer, living in Spain.",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+};
+---
+<PageLayout meta={meta}>
+  {projects.map(project => ( 
+    <section class="py-20 md:py-32">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="text-center space-y-4 mb-16">
+            <Badge variant="secondary">
+              {project.badge}
+            </Badge>
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+              {project.title}
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-[800px] mx-auto">
+              {project.description}
+            </p>
+          </div>
+          <div class="flex flex-1 flex-col gap-4 p-4">
+                <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+
+                    {project.repos.map(repo => (
+                      <a href={repo.url} class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative" target="_blank">
+                        <Image src={repo.image} alt={repo.title} class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                        <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow
+                                      bg-black/60 px-3 py-1 rounded-md">
+                          {repo.title}
+                        </span>
+                      </a>
+                    ))}
+                </div>
+	        </div>
+        </div>
+    </section>
+
+  ))}
+</PageLayout>

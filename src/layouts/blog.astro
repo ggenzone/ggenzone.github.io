@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import BlogPage from "../app/blog.tsx"
+import type { Blog } from '@/types/blog';
+import MainLayout from './main.astro';
+
+interface Props  {
+  blog: Blog;
+}
+
+// if you want to use the sidebar cookie
+const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
+const { blog } = Astro.props;
+
+
+const meta = {
+  title: blog.title,
+  description: blog.description,
+  type: "article",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+};
+---
+
+<MainLayout meta={meta}>
+<div class="blog">
+    <BlogPage client:load defaultSidebarOpen={defaultSidebarOpen} blog={blog}>
+        <div class="mx-auto grid w-full max-w-2xl grid-cols-1 gap-10 xl:max-w-5xl xl:grid-cols-[minmax(0,1fr)_var(--container-2xs)]">
+            <slot>
+        </div>
+    </Page>
+    </div>
+</MainLayout>
